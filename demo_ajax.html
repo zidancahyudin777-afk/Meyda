@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo AJAX</title>
+</head>
+
+<body>
+    <h2>Demo Update Stok via AJAX</h2>
+    <p>Buka Console (F12) untuk melihat log.</p>
+    <button onclick="updateStock(1, 100)">Set Stok ID 1 ke 100</button>
+
+    <script>
+        function updateStock(id, newStock) {
+            fetch('/meyda/ajax/update_stok.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: id,
+                    stok: newStock
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('Response: ' + data.message);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>
