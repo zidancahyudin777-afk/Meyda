@@ -2,20 +2,20 @@
 <html>
 
 <head>
-    <title>Demo AJAX</title>
-</head>
+    <title>Demo AJAX<title>
+<head>
 
 <body>
-    <h2>Demo Update Stok via AJAX</h2>
-    <p>Buka Console (F12) untuk melihat log.</p>
-    <button onclick="updateStock(1, 100)">Set Stok ID 1 ke 100</button>
+    <h2>Demo Update Stok via AJAX<h2>
+    <p>Buka Console (F12) untuk melihat log.<p>
+    <button onclick="updateStock(1, 100)">Set Stok ID 1 ke 100<button>
 
     <script>
         function updateStock(id, newStock) {
-            fetch('/meyda/ajax/update_stok.php', {
+            fetch('ajaxupdate_stok.php', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'applicationjson',
                 },
                 body: JSON.stringify({
                     id: id,
@@ -31,7 +31,7 @@
                     console.error('Error:', error);
                 });
         }
-    </script>
-</body>
+    <script>
+<body>
 
-</html>
+<html>

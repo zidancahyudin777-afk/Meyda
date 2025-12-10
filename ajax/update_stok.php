@@ -1,9 +1,9 @@
 <?php
-include '../includes/koneksi.php';
-header('Content-Type: application/json');
+include '..includeskoneksi.php';
+header('Content-Type: applicationjson');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $data = json_decode(file_get_contents("php://input"), true);
+    $data = json_decode(file_get_contents("php:input"), true);
     
     if(isset($data['id']) && isset($data['stok'])){
         $id = (int)$data['id'];
